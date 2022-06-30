@@ -44,5 +44,20 @@ test("that the left arrow button works", () =>{
 
 
 test("that the arrows show and hide when appropriate", () =>{
+  const { queryByTestId, queryByAltText} = render(<Carousel />)
+  const rightArrow = queryByTestId("right-arrow");
+  const leftArrow = queryByTestId("left-arrow");
 
+  expect(rightArrow).not.toHaveClass("hidden");
+  expect(leftArrow).toHaveClass("hidden");
+
+  fireEvent.click(rightArrow);
+
+  expect(rightArrow).not.toHaveClass("hidden");
+  expect(leftArrow).not.toHaveClass("hidden");
+
+  fireEvent.click(rightArrow);
+
+  expect(rightArrow).toHaveClass("hidden");
+  expect(leftArrow).not.toHaveClass("hidden");
 })

@@ -11,13 +11,15 @@ function Carousel(props) {
   const total = props.cardData.length;
   const goForward = () => setCardIdx(cardIdx + 1);
   const goBackward = () => setCardIdx(cardIdx -1);
+  const leftHidden = cardIdx === 0 ? "hidden" : "";
+  const rightHidden = cardIdx === total - 1? "hidden" : "";
 
   return (
     <div className="Carousel">
       <h1>{props.title}</h1>
       <div className="Carousel-main">
         <i
-          className="fas fa-chevron-circle-left fa-2x"
+          className={`fas fa-chevron-circle-left fa-2x ${leftHidden}`}
           onClick={goBackward}
           data-testid="left-arrow"
         />
@@ -28,7 +30,7 @@ function Carousel(props) {
           totalNum={total}
         />
         <i
-          className="fas fa-chevron-circle-right fa-2x"
+          className={`fas fa-chevron-circle-right fa-2x ${rightHidden}`}
           onClick={goForward}
           data-testid="right-arrow"
         />
