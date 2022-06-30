@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "testing-library/react";
+import { render } from "@testing-library/react";
 import Card from "./Card"
 
 test("if it renders without crashing", () =>{

@@ -14,15 +14,19 @@ function Carousel(props) {
   const leftHidden = cardIdx === 0 ? "hidden" : "";
   const rightHidden = cardIdx === total - 1? "hidden" : "";
 
+  // const [show,setShow] = useState(true)
+
+
+
   return (
     <div className="Carousel">
       <h1>{props.title}</h1>
       <div className="Carousel-main">
-        <i
-          className={`fas fa-chevron-circle-left fa-2x ${leftHidden}`}
-          onClick={goBackward}
-          data-testid="left-arrow"
-        />
+          <i
+            className={`fas fa-chevron-circle-left fa-2x ${leftHidden}`}
+            onClick={goBackward}
+            data-testid="left-arrow"
+          />
         <Card
           caption={card.caption}
           src={card.src}
